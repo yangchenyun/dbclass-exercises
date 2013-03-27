@@ -56,8 +56,10 @@ Use the bin file `utils/bin/xslt` in this repo. It is a simple wrapper around `s
 For example
 
     xslt -xsl:core-q1.xsl courses.xml
-    
-    
-[dbext-link]: https://github.com/vim-scripts/dbext.vim
 
 More detailed usage: checkout the document on the [official site](http://www.saxonica.com/documentation/using-xquery/commandline.xml) for more details.
+
+## 4. Constains and Triggers / 5. Views
+Same as 3.SQL
+
+[dbext-link]: https://github.com/vim-scripts/dbext.vim

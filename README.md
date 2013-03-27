@@ -19,7 +19,7 @@ The first line in all examples is used by the `dbext` vim plugin to correctly co
 ### How to Run
 Option 1, open a sqlite3 console with `sqlite3` and copy and paste the SQL in the console.
 
-Option 2, uses the `dbext` vim plugin to communicate with the sqlite3 database. Select the sql in visual mode, execute `:DBExecRangeSQL` or press `<leader>se`.
+Option 2, uses the [`dbext`][dbext-link] vim plugin to communicate with the sqlite3 database. Select the sql in visual mode, execute `:DBExecRangeSQL` or press `<leader>se`.
 
 ## 3. XML Exercises
 This includes exercises for xml .
@@ -56,5 +56,8 @@ Use the bin file `utils/bin/xslt` in this repo. It is a simple wrapper around `s
 For example
 
     xslt -xsl:core-q1.xsl courses.xml
+    
+    
+[dbext-link]: https://github.com/vim-scripts/dbext.vim
 
 More detailed usage: checkout the document on the [official site](http://www.saxonica.com/documentation/using-xquery/commandline.xml) for more details.

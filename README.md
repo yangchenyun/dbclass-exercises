@@ -53,4 +53,8 @@ Use the bin file `utils/bin/xslt` in this repo. It is a simple wrapper around `s
 
     xslt -xsl:<xslt file> <original xml>
 
+For example
+
+    xslt -xsl:core-q1.xsl courses.xml
+
 More detailed usage: checkout the document on the [official site](http://www.saxonica.com/documentation/using-xquery/commandline.xml) for more details.

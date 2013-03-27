@@ -1,0 +1,4 @@
+#!/bin/sh
+# Edit RA_PATH to suit the system
+export RA_PATH=$HOME/tools/ra-2.1b/ra.jar
+java -jar $RA_PATH $@

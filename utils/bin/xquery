@@ -1,0 +1,7 @@
+#!/bin/bash
+result=`exec java -cp /usr/local/Cellar/saxon/9.4.0.6/libexec/saxon9he.jar net.sf.saxon.Query "$@"`
+if echo $result | xmllint --format - &> /dev/null
+# format the output if it is valid xml
+then echo $result | xmllint --format -
+else echo $result
+fi

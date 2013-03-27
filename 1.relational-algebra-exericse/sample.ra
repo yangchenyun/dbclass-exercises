@@ -1,0 +1,88 @@
+/*
+ * This file can re-populate the database with our pizzeria data,
+ * if the data gets modified or the database is corrupted.
+ * To use, execute "java -jar ra.jar -i sample.ra" at the command line.
+ */
+
+/* Delete the tables if they already exist */
+\sqlexec_{drop table if exists Person};
+\sqlexec_{drop table if exists Frequents};
+\sqlexec_{drop table if exists Eats};
+\sqlexec_{drop table if exists Serves};
+
+/* Create the schema for our tables */
+\sqlexec_{create table Person(name text, age int, gender text)};
+\sqlexec_{create table Frequents(name text, pizzeria text)};
+\sqlexec_{create table Eats(name text, pizza text)};
+\sqlexec_{create table Serves(pizzeria text, pizza text, price decimal)};
+
+/* Populate the tables with our data */
+\sqlexec_{insert into Person values('Amy', 16, 'female')};
+\sqlexec_{insert into Person values('Ben', 21, 'male')};
+\sqlexec_{insert into Person values('Cal', 33, 'male')};
+\sqlexec_{insert into Person values('Dan', 13, 'male')};
+\sqlexec_{insert into Person values('Eli', 45, 'male')};
+\sqlexec_{insert into Person values('Fay', 21, 'female')};
+\sqlexec_{insert into Person values('Gus', 24, 'male')};
+\sqlexec_{insert into Person values('Hil', 30, 'female')};
+\sqlexec_{insert into Person values('Ian', 18, 'male')};
+
+\sqlexec_{insert into Frequents values('Amy', 'Pizza Hut')};
+\sqlexec_{insert into Frequents values('Ben', 'Pizza Hut')};
+\sqlexec_{insert into Frequents values('Ben', 'Chicago Pizza')};
+\sqlexec_{insert into Frequents values('Cal', 'Straw Hat')};
+\sqlexec_{insert into Frequents values('Cal', 'New York Pizza')};
+\sqlexec_{insert into Frequents values('Dan', 'Straw Hat')};
+\sqlexec_{insert into Frequents values('Dan', 'New York Pizza')};
+\sqlexec_{insert into Frequents values('Eli', 'Straw Hat')};
+\sqlexec_{insert into Frequents values('Eli', 'Chicago Pizza')};
+\sqlexec_{insert into Frequents values('Fay', 'Dominos')};
+\sqlexec_{insert into Frequents values('Fay', 'Little Caesars')};
+\sqlexec_{insert into Frequents values('Gus', 'Chicago Pizza')};
+\sqlexec_{insert into Frequents values('Gus', 'Pizza Hut')};
+\sqlexec_{insert into Frequents values('Hil', 'Dominos')};
+\sqlexec_{insert into Frequents values('Hil', 'Straw Hat')};
+\sqlexec_{insert into Frequents values('Hil', 'Pizza Hut')};
+\sqlexec_{insert into Frequents values('Ian', 'New York Pizza')};
+\sqlexec_{insert into Frequents values('Ian', 'Straw Hat')};
+\sqlexec_{insert into Frequents values('Ian', 'Dominos')};
+
+\sqlexec_{insert into Eats values('Amy', 'pepperoni')};
+\sqlexec_{insert into Eats values('Amy', 'mushroom')};
+\sqlexec_{insert into Eats values('Ben', 'pepperoni')};
+\sqlexec_{insert into Eats values('Ben', 'cheese')};
+\sqlexec_{insert into Eats values('Cal', 'supreme')};
+\sqlexec_{insert into Eats values('Dan', 'pepperoni')};
+\sqlexec_{insert into Eats values('Dan', 'cheese')};
+\sqlexec_{insert into Eats values('Dan', 'sausage')};
+\sqlexec_{insert into Eats values('Dan', 'supreme')};
+\sqlexec_{insert into Eats values('Dan', 'mushroom')};
+\sqlexec_{insert into Eats values('Eli', 'supreme')};
+\sqlexec_{insert into Eats values('Eli', 'cheese')};
+\sqlexec_{insert into Eats values('Fay', 'mushroom')};
+\sqlexec_{insert into Eats values('Gus', 'mushroom')};
+\sqlexec_{insert into Eats values('Gus', 'supreme')};
+\sqlexec_{insert into Eats values('Gus', 'cheese')};
+\sqlexec_{insert into Eats values('Hil', 'supreme')};
+\sqlexec_{insert into Eats values('Hil', 'cheese')};
+\sqlexec_{insert into Eats values('Ian', 'supreme')};
+\sqlexec_{insert into Eats values('Ian', 'pepperoni')};
+
+\sqlexec_{insert into Serves values('Pizza Hut', 'pepperoni', 12)};
+\sqlexec_{insert into Serves values('Pizza Hut', 'sausage', 12)};
+\sqlexec_{insert into Serves values('Pizza Hut', 'cheese', 9)};
+\sqlexec_{insert into Serves values('Pizza Hut', 'supreme', 12)};
+\sqlexec_{insert into Serves values('Little Caesars', 'pepperoni', 9.75)};
+\sqlexec_{insert into Serves values('Little Caesars', 'sausage', 9.5)};
+\sqlexec_{insert into Serves values('Little Caesars', 'cheese', 7)};
+\sqlexec_{insert into Serves values('Little Caesars', 'mushroom', 9.25)};
+\sqlexec_{insert into Serves values('Dominos', 'cheese', 9.75)};
+\sqlexec_{insert into Serves values('Dominos', 'mushroom', 11)};
+\sqlexec_{insert into Serves values('Straw Hat', 'pepperoni', 8)};
+\sqlexec_{insert into Serves values('Straw Hat', 'cheese', 9.25)};
+\sqlexec_{insert into Serves values('Straw Hat', 'sausage', 9.75)};
+\sqlexec_{insert into Serves values('New York Pizza', 'pepperoni', 8)};
+\sqlexec_{insert into Serves values('New York Pizza', 'cheese', 7)};
+\sqlexec_{insert into Serves values('New York Pizza', 'supreme', 8.5)};
+\sqlexec_{insert into Serves values('Chicago Pizza', 'cheese', 7.75)};
+\sqlexec_{insert into Serves values('Chicago Pizza', 'supreme', 8.5)};

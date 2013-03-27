@@ -1,0 +1,18 @@
+// Find all pizzerias that serve every pizza eaten by people over 30.
+
+\project_{pizzeria} \select_{pizza < pizza1} (
+  serves // pizzerias serve any one of pizza eaten by people over 30
+  \join
+  \project_{pizza} (
+    \select_{age > 30} 
+      person \join eats)
+  \join
+  \rename_{pizzeria, pizza1, price1} (
+    serves // pizzerias serve any one of pizza eaten by people over 30
+    \join
+    \project_{pizza} (
+      \select_{age > 30} 
+        person \join eats)
+  )
+)
+;

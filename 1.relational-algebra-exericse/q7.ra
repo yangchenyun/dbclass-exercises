@@ -1,0 +1,29 @@
+// Find the age of the oldest person (or people) who eat mushroom pizza.
+
+\project_{age} (
+  \select_{pizza = 'mushroom'} (
+    person 
+    \join 
+    eats)
+)
+\diff
+\project_{age} (
+  \select_{ age < age1 } ( // all person has one person older than it
+    \project_{name, age} (
+      \select_{pizza = 'mushroom'} (
+        person 
+        \join 
+        eats)
+    )
+    \join_{ name <> name1 }
+    \rename_{name1, age1} (
+      \project_{name, age} (
+        \select_{pizza = 'mushroom'} (
+          person 
+          \join 
+          eats)
+      )
+    )
+  )
+)
+;

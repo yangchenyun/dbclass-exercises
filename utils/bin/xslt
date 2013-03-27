@@ -1,0 +1,2 @@
+#!/bin/bash
+exec java -cp /usr/local/Cellar/saxon/9.4.0.6/libexec/saxon9he.jar net.sf.saxon.Transform "$@"
